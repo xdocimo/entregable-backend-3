@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Yerba Teragui",
+        "price": 500,
+        "description": "Una yerba muy sólida."
+    },
+    {
+        "id": 2,
+        "name": "Coca-Cola Sugarfree",
+        "price": 50,
+        "description": "Apto para dietas sugarfree"
+    },
+    {
+        "id": 3,
+        "name": "Pringles Sabor Mostaza",
+        "price": 125,
+        "description": "Ideal para picadas con amigos."
+    },
+    {
+        "id": 4,
+        "name": "Helado de Chocolate",
+        "price": 900,
+        "description": "Para bajar el calor arrasante."
+    },
+    {
+        "id": 5,
+        "name": "Yogurt Frutilla Colgate",
+        "price": 1250,
+        "description": "Glutenfree"
+    }
+]
