@@ -4,49 +4,1458 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">  
 <title> Home </title>  
 <%- include('../partials/header'); -%>
-<style>   
-Body {  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
-}  
-button {   
-       background-color: #4CAF50;   
-       width: 100%;  
-        color: orange;   
-        padding: 15px;   
-        margin: 10px 0px;   
-        border: none;   
-        cursor: pointer;   
-         }   
- form {   
-        border: 3px solid #f1f1f1;   
-    }   
- input[type=text], input[type=password] {   
-        width: 100%;   
-        margin: 8px 0;  
-        padding: 12px 20px;   
-        display: inline-block;   
-        border: 2px solid green;   
-        box-sizing: border-box;   
-    }  
- button:hover {   
-        opacity: 0.7;   
-    }   
-  .cancelbtn {   
-        width: auto;   
-        padding: 10px 18px;  
-        margin: 10px 5px;  
-    }   
-        
-     
- .container {   
-        padding: 25px;   
-        background-color: lightblue;  
-    }   
-</style>   
 </head>    
 <body>    
-  <h1>Bienvenidos a mi página web! :)</h1> 
+  <!-- Cart -->
+<div id="cart" class="overlay">
+  <div class="cart">
+    <h2><i class="fa-solid fa-cart-shopping"></i> Tus objetos:</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      Gracias por tu interés! A continuación se enlistan los objetos en tu carrito de compras:
+    </div>
+    <div class="itemcart">
+      <img
+        src="https://ultratechnutrition.com/wp/wp-content/uploads/2019/12/Whey-Isolate-907-g-Vainilla-500px-alto-CON-MARGEN.png"
+        height="150px">
+      <div class="acerca">
+        <h3 class="titulo">Whey Protein</h3>
+        <h4 class="cantidad">Cantidad: x1</h4>
+        <h3 class="precio">$598</h3>
+        <h3 class="descripcion">El suplemento de proteina ayuda a alcanzar los niveles diarios optimos para el
+          desarollo muscular en
+          dietas descuidadas. Se trata de un polvo saborizado (a elección) que se prepara en una infusión
+          usualmente tipo batido. Cada scoop posee 30g de proteina. ¡Varios sabores disponibles!</h3>
+      </div>
+    </div>
+    <div class="itemcart">
+      <img src="https://ultratechnutrition.com/wp/wp-content/uploads/2016/08/ultra-weight-gainer-full.png"
+        height="141px">
+      <div class="acerca">
+        <h3 class="titulo">Whey Mass</h3>
+        <h4 class="cantidad">Cantidad: x3</h4>
+        <h3 class="precio">$700</h3>
+        <h3 class="descripcion">Aumenta rápida y voluminosamente tu masa corporal con este polvo. Garantizados
+          por lo menos 70
+          kilogramos de ganancia en el primer mes de uso. Consulte con su médico de confianza su aptitud para
+          la ingesta.</h3>
+      </div>
+    </div>
+    <div class="centerizar">
+      <h3 class="subtotal">Subtotal: $2698</h3>
+      <button class="finalizar">Finalizar compra</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pagina main -->
+<div class="main">
+  <img src="https://i.imgur.com/4D5XVSG.png" alt="Logo" width="800px">
+  <h1>GO Supplements Argentina</h1>
+  <h4>Disfruta de los mejores suplementos en Argentina. Calidad europea a precios accesibles. Potencia tu rendimiento
+    y obtén resultados increibles o te devolvemos tu dinero. </h4>
+  <a href="#store"><button class="glow-on-hover" type="button"><i class="fa-solid fa-cart-arrow-down"></i>COMPRA
+      AHORA</button></a> <!-- Botoncito rainbow (Cortesia de foro inglés.) -->
+</div>
+<br>
+<!-- Stats con tabla -->
+<div class="stats" id="stats">
+  <br>
+  <h2 class=test>Nuestras estadísticas</h2>
+  <h3>Los números y nuestra trayectoria nos avalan</h3>
+  <table class="tabla-cool">
+    <thead>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fa-solid fa-people-group"></i>Clientes</td>
+        <td class="number">6593</td>
+
+      </tr>
+      <tr>
+        <td><i class="fa-solid fa-clock"></i> Tiempo aprox entrega</td>
+        <td class="number">27 hs</td>
+      </tr>
+      <tr>
+        <td><i class="fa-solid fa-list"></i> Variedad de stock</td>
+        <td class="number">+40 sabores</td>
+      </tr>
+
+      <tr>
+        <td><i class="fa-solid fa-location-pin"></i> Locales en Argentina</td>
+        <td class="number">7 locales.</td>
+
+      </tr>
+
+      <tr>
+        <td><i class="fa-solid fa-medal"></i> Reconocimientos</td>
+        <td class="number">21 Awards</td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
+</section>
+
+<!-- Utilizando Sweet Alert para mostrar un "carrito" cuando se clickea "comprar" en un producto de la store :) -->
+<script type="text/javascript">
+  function order1() {
+    swal({
+      icon: 'info',
+      title: 'Estas a un paso de obtener "Creatine Powder"',
+      text: 'Gracias por tu interes! El total seria $70 ARS.',
+      timer: 15500,
+      showCloseButton: true
+    })
+  }
+</script>
+<script type="text/javascript">
+  function order2() {
+    swal({
+      icon: 'info',
+      title: 'Estas a un paso de obtener "Whey Fatloss"',
+      text: 'Gracias por tu interes! El total seria $4350 ARS.',
+      timer: 15500,
+      showCloseButton: true
+    })
+  }
+</script>
+<script type="text/javascript">
+  function order3() {
+    swal({
+      icon: 'info',
+      title: 'Estas a un paso de obtener "Whey Protein"',
+      text: 'Gracias por tu interes! El total seria $150 ARS.',
+      timer: 15500,
+      showCloseButton: true
+    })
+  }
+</script>
+<script type="text/javascript">
+  function order4() {
+    swal({
+      icon: 'info',
+      title: 'Estas a un paso de obtener "Whey Mass"',
+      text: 'Gracias por tu interes! El total seria $990 ARS.',
+      timer: 15500,
+      showCloseButton: true
+    })
+  }
+</script>
+<script type="text/javascript">
+  function order5() {
+    swal({
+      icon: 'info',
+      title: 'Estas a un paso de obtener "Energy Powder"',
+      text: 'Gracias por tu interes! El total seria $2100 ARS.',
+      timer: 15500,
+      showCloseButton: true
+    })
+  }
+</script>
+
+
+
+<h2 class=test>Nuestros productos</h2> <!-- Scroll no responsivo pero muy bonito. -->
+<div class="slider" id="store">
+  <input type="radio" name="item" id="t-1">
+  <input type="radio" name="item" id="t-2">
+  <input type="radio" name="item" id="t-3" checked>
+  <input type="radio" name="item" id="t-4">
+  <input type="radio" name="item" id="t-5">
+  <div class="shopcito">
+    <label class="item" for="t-1">
+      <img src="https://i.imgur.com/ES1RR6r.png">
+      <p>
+      <h2 class="high">Creatine Powder</h1>
+        </p>
+        <p>La creatina es un suplemento de amplio espectro que libera tu máximo potencial, obtén una resistencia
+          única.</p>
+        <a href="#store"><button class="glow-on-hover" type="button" onclick="order1()"><i
+              class="fa-solid fa-cart-arrow-down"></i>ARS$70</button></a>
+        <p>Stock disponible: 91 unidades</p>
+    </label>
+    <label class="item" for="t-2">
+      <img src="https://i.imgur.com/jpvc7gL.png">
+      <p>
+      <h2 class="high">Whey Fatloss</h1>
+        </p>
+        <p>Suplemento con poco aval cientifico que permite eliminar grasa de forma fácil y consistente, sin
+          aparentes riesgos para la salud.</p>
+        <a href="#store"><button class="glow-on-hover" type="button" onclick="order2()"><i
+              class="fa-solid fa-cart-arrow-down"></i>ARS$4350</button></a>
+        <p>Stock disponible: 5 unidades</p>
+    </label>
+    <label class="item" for="t-3">
+      <img src="https://i.imgur.com/ES1RR6r.png">
+      <p>
+      <h2 class="high">Whey Protein</h1>
+        </p>
+        <p>El suplemento de proteina ayuda a alcanzar los niveles diarios optimos para el desarollo muscular en
+          dietas descuidadas. Se trata de un polvo saborizado (a elección) que se prepara en una infusión
+          usualmente tipo batido. Cada scoop posee 30g de proteina. ¡Varios sabores disponibles!</p>
+        <a href="#store"><button class="glow-on-hover" type="button" onclick="order3()"><i
+              class="fa-solid fa-cart-arrow-down"></i>ARS$150</button></a>
+        <p>Stock disponible: 49 unidades</p>
+    </label>
+    <label class="item" for="t-4">
+      <img src="https://i.imgur.com/39U3r1b.png">
+      <p>
+      <h2 class="high">Whey Mass</h1>
+        </p>
+        <p>Aumenta rápida y voluminosamente tu masa corporal con este polvo. Garantizados por lo menos 70
+          kilogramos de ganancia en el primer mes de uso. Consulte con su médico de confianza su aptitud para
+          la ingesta.</p>
+        <a href="#store"><button class="glow-on-hover" type="button" onclick="order4()"><i
+              class="fa-solid fa-cart-arrow-down"></i>ARS$990</button></a>
+        <p>Stock disponible: 77 unidades</p>
+        <p>Riesgo. Disclaimer</p>
+    </label>
+    <label class="item" for="t-5">
+      <img src="https://i.imgur.com/11HyE1T.png">
+      <p>
+      <h2 class="high">Energy Powder</h1>
+        </p>
+        <p>El equivalente a doscientas tazas de café en un solo scoop! El energizante más potente del mundo.
+          Para entrenamientos de élite</p>
+        <a href="#store"><button class="glow-on-hover" type="button" onclick="order5()"><i
+              class="fa-solid fa-cart-arrow-down"></i>ARS$2100</button></a>
+        <p>Stock disponible: 4750 unidades</p>
+    </label>
+  </div>
+</div>
+</section>
+</section>
+<style>
+  * {
+  transition: all 0.4s ease-out;
+}
+
+/* Registro check */
+
+
+.contenedor {
+  margin: 56px;
+  background-color: white;
+}
+
+input {
+  width: 95%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background:lightgray;
+}
+
+input:hover,
+input:active {
+  width: 95%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #dddddd;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.botonregistro {
+  background-color: #ff8af5;
+  color: white;
+  padding: 16px;
+  border: none;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 30%;
+}
+
+.botonregistro:hover {
+  background-color: rgb(114, 0, 95);
+}
+
+.contenedor a {
+  color: #ff8af5;
+  text-decoration: none;
+}
+
+.contenedor a:hover {
+  color: rgb(114, 0, 95);
+  text-decoration: none;
+}
+
+h3.titulo {
+  font-size: 20px;
+  margin-bottom: -4px
+}
+
+h3.subtotal {
+  font-size: 12px;
+}
+
+.finalizar {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 5px;
+  box-shadow: black;
+  box-sizing: border-box;
+  justify-content: center;
+  flex: auto;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.finalizar:hover {
+  background: lightcoral;
+}
+
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+h4.cantidad {
+  font-size: 10px;
+  color: red
+}
+
+h3.descripcion {
+  font-size: 11px;
+  color: gray;
+}
+
+.itemcart {
+  display: flex;
+  margin: 12px;
+}
+
+.itemcart img {
+  margin-right: 15px;
+}
+
+.main img {
+  width: 650px;
+}
+
+.main img:hover {
+  width: 680px;
+}
+
+.smalllogoredimension img:hover {
+  width: 670px;
+}
+
+.centerizar {
+  margin-top: 15px;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.itemcart img:hover {
+  opacity: 50%;
+  height: 155px;
+}
+
+.rating span {
+  color: violet;
+}
+
+.rating span:hover {
+  color: darkviolet;
+}
+
+.imgx {
+  margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 75px;
+}
+
+.imgcartx {
+  margin-left: 75px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 75px;
+}
+
+.botoncheckout {
+  background-color: violet;
+  color: white;
+  padding: 12px;
+  border: none;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 30%;
+}
+
+.botonlike {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  padding: 12px;
+  border: none;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 10%;
+}
+
+.botonera {
+  margin: 25px;
+  padding-bottom: 20px;
+  padding-left: 235px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+.botoncheckout:hover {
+  background-color: rgb(114, 0, 95);
+}
+
+.botonlike:hover {
+  background-color: rgb(114, 0, 95);
+}
+
+h3.desc {
+  width: 80%;
+}
+
+h3.desc:hover {
+  color: black;
+}
+
+h3.titulo {
+  font-size: 29px;
+}
+
+h3.titulo:hover {
+  color: darkgray;
+}
+
+h3.pricex {
+  color: violet;
+  font-size: 20px;
+  margin-bottom: -5px;
+  margin-top: 7px;
+}
+
+h3.pricex:hover {
+  color: darkviolet;
+}
+
+
+.stars {
+  display: flex;
+  flex-direction: column;
+  margin-right: 75px;
+}
+
+
+h3.desc {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+}
+
+.contenedorx {
+  margin-left: 156px;
+  margin-right: 156px;
+  background-color: white;
+}
+
+
+.box {
+  height: 56%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  height: 64%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.cart h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.cart .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.cart .close:hover {
+  color: #d80606;
+}
+
+.cart .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px) {
+
+  input {
+    width: 85%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: lightgray;
+  }
+
+  input:hover,
+  input:active {
+    width: 87%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+  background: #dddddd;
+  }
+
+  .rating span {
+    color: violet;
+  }
+
+  .rating span:hover {
+    color: darkviolet;
+  }
+
+  .imgx {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imgcartx {
+    margin-left: 75px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 75px;
+  }
+
+  .imgcartx img {
+    width: 100px;
+    height: 200px;
+    margin-right: -5px;
+  }
+
+  .botoncheckout {
+    background-color: violet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+  }
+
+  .botonlike {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+  }
+
+  .botonera {
+    margin: 5px;
+    width: 100%;
+  }
+
+  .botoncheckout:hover {
+    background-color: rgb(114, 0, 95);
+  }
+
+  .botonlike:hover {
+    background-color: rgb(114, 0, 95);
+  }
+
+  h3.desc {
+    width: 60%;
+  }
+
+  h3.desc:hover {
+    color: black;
+  }
+
+  h3.titulo {
+    font-size: 29px;
+    margin-left: -5px;
+  }
+
+  h3.titulo:hover {
+    color: darkgray;
+  }
+
+  h3.pricex {
+    margin-left: -5px;
+    color: violet;
+    font-size: 20px;
+    margin-bottom: -5px;
+    margin-top: 7px;
+  }
+
+  h3.pricex:hover {
+    color: darkviolet;
+  }
+
+
+  .stars {
+    display: flex;
+    flex-direction: column;
+    margin-right: 75px;
+  }
+
+
+  h3.desc {
+    display: flex;
+    margin-left: -5px;
+    width: 160%;
+    flex-direction: column;
+    color: gray;
+  }
+
+  .contenedorx {
+    width: 90%;
+    margin-left: 16px;
+    background-color: white;
+  }
+
+  .itemcart img:hover {
+    opacity: 50%;
+    height: 120px
+  }
+
+
+  .box {
+    width: 100%;
+  }
+
+  .cart {
+    margin-left: -10px;
+    height: 42%;
+    width: 60%;
+  }
+
+  .acerca {
+    width: 110%;
+    margin-right: -10px;
+  }
+  
+
+  .centerizar {
+    margin-top: 15px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .itemcart {
+    margin: 12px;
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  h3.descripcion {
+    font-size: 13px;
+    width: 60%;
+    color: gray;
+  }
+
+  .content {
+    width: 65%;
+  }
+
+  .itemcart img {
+    height: 100px
+  }
+
+  .glow-on-hover {
+    width: 50px;
+    visibility: hidden;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+
+  }
+}
+
+
+.main {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+@media (min-width: 200px) and (max-width: 992px) {
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: white;
+  font-size: 3vw;
+  padding: 1vw;
+  margin: 3vw;
+  border: solid;
+}
+
+@media (min-width: 1000px) {
+  h4 {
+    color: white;
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 992px) {
+  h4 {
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+  }
+}
+
+header {
+  background-color: black;
+  opacity: 100%;
+}
+
+
+@media (min-width: 200px) and (max-width: 992px) {
+  .mobilewarning {
+    opacity: 100%;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+
+  nav {
+    margin: 17px auto 0;
+    position: relative;
+    width: 350px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    font-size: 0;
+    opacity: 100%;
+  }
+
+  nav a {
+    line-height: 30px;
+    height: 70%;
+    font-size: 12px;
+    display: inline;
+    margin: 7px;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+  }
+
+  .tabla-cool {
+    border-collapse: collapse;
+    width: 200px;
+    margin: 2px 0;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    min-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.418);
+  }
+
+  .tabla-cool i {
+    color: black;
+    font-size: 17px;
+    margin-right: 10px;
+
+  }
+
+  .tabla-cool thead tr {
+    background-color: #a459af;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .tabla-cool th {
+    padding: 12px 15px;
+    float: right;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+  }
+
+  .tabla-cool td.number {
+    padding: 12px 15px;
+    float: left;
+    color: rgb(0, 0, 0);
+  }
+
+  .tabla-cool td {
+    padding: 12px 15px;
+    float: left;
+    color: rgb(255, 255, 255);
+  }
+
+  .stats {
+    font-size: 12px;
+    font-family: sans-serif;
+    background: #f19ff1;
+    height: 450px;
+    width: 725px;
+  }
+
+  .footer {
+    background-color: black;
+    opacity: 90%;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 160px;
+  }
+
+  .footer i {
+    font-size: 32px;
+    color: white;
+  }
+
+  .footer li {
+    padding: 2px 0;
+    display: inline-block;
+    margin: 8px
+  }
+
+  .footer i:hover {
+    color: pink;
+    font-size: 22px;
+  }
+
+  .footerh3 {
+    font-size: 12px;
+    color: white;
+    flex-direction: column;
+  }
+
+  .footer a {
+    color: pink;
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .mobilewarning {
+    opacity: 0%
+  }
+
+  .footer {
+    background-color: black;
+    opacity: 90%;
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 230px;
+  }
+
+  .footer i {
+    font-size: 32px;
+    color: white;
+  }
+
+  .footer li {
+    padding: 3px 0;
+    display: inline-block;
+    margin: 32px
+  }
+
+  .footer i:hover {
+    color: pink;
+    font-size: 49px;
+  }
+
+  .footerh3 {
+    font-size: 12px;
+    color: white;
+    flex-direction: column;
+  }
+
+  .footer a {
+    color: pink;
+  }
+
+  nav {
+    margin: 27px auto 0;
+    position: relative;
+    width: 590px;
+    height: 50px;
+    background-color: black;
+    border-radius: 8px;
+    font-size: 0;
+    opacity: 100%;
+  }
+
+  nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+  }
+
+  .tabla-cool {
+    border-collapse: collapse;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 15px 0;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    min-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.418);
+  }
+
+  .tabla-cool i {
+    color: purple;
+    font-size: 17px;
+    margin-right: 10px;
+
+  }
+
+  .tabla-cool thead tr {
+    background-color: #a459af;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .tabla-cool th {
+    padding: 12px 15px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+  }
+
+  .tabla-cool td {
+    padding: 12px 15px;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  }
+
+  .stats {
+    font-size: 12px;
+    font-family: sans-serif;
+    background: #f19ff1;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 450px;
+    width: 100%;
+  }
+}
+
+a:nth-child(1) {
+  width: 100px;
+}
+
+a:nth-child(2) {
+  width: 110px;
+}
+
+a:nth-child(3) {
+  width: 100px;
+}
+
+a:nth-child(4) {
+  width: 160px;
+}
+
+a:nth-child(5) {
+  width: 120px;
+}
+
+nav .start-home,
+a:nth-child(1):hover~.animation {
+  width: 100px;
+  left: 0;
+  background-color: #1abc9c;
+}
+
+nav .start-about,
+a:nth-child(2):hover~.animation {
+  width: 110px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+
+nav .start-blog,
+a:nth-child(3):hover~.animation {
+  width: 100px;
+  left: 210px;
+  background-color: #3498db;
+}
+
+nav .start-portefolio,
+a:nth-child(4):hover~.animation {
+  width: 160px;
+  left: 310px;
+  background-color: #9b59b6;
+}
+
+nav .start-contact,
+a:nth-child(5):hover~.animation {
+  width: 120px;
+  left: 470px;
+  background-color: #e67e22;
+}
+
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: url("https://i.imgur.com/cNscFrS.png");
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Cherry Swash', cursive;
+}
+
+h2.test {
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Cherry Swash', cursive;
+}
+
+h2.history {
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Cherry Swash', cursive;
+}
+
+p.history {
+  position: absolute;
+  width: 20%;
+  text-align: center;
+  color: #ecf0f1;
+  font-family: 'Cherry Swash', cursive;
+  font-size: 16px;
+}
+
+span {
+  color: #2BD6B4;
+}
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.slider {
+  width: 100%;
+}
+
+h2 {
+  color: white;
+  font-size: 3vw;
+  border: solid;
+}
+
+.slider input {
+  display: none;
+}
+
+.shopcito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 350px;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.shopcito .item {
+  top: 0;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #604c97;
+  padding: 10px;
+  width: 450px;
+  text-align: center;
+  transition: transform 0.4s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  cursor: pointer;
+}
+
+.shopcito .item img {
+  width: 100px;
+  border-radius: 50%;
+  border: 13px solid #ae8eff;
+}
+
+.shopcito .item p {
+  color: #ddd;
+}
+
+.shopcito .item h2 {
+  font-size: 14px;
+}
+
+/* First */
+#t-1:checked~.dots label[for="t-1"] {
+  transform: scale(2);
+  background-color: #fff;
+}
+
+#t-1:checked~.dots label[for="t-2"] {
+  transform: scale(1.5);
+}
+
+#t-1:checked~.shopcito label[for="t-1"] {
+  z-index: 4;
+}
+
+#t-1:checked~.shopcito label[for="t-2"] {
+  transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+  z-index: 3;
+}
+
+#t-1:checked~.shopcito label[for="t-3"] {
+  transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+  z-index: 2;
+}
+
+#t-1:checked~.shopcito label[for="t-4"] {
+  transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+  z-index: 1;
+}
+
+#t-1:checked~.shopcito label[for="t-5"] {
+  transform: translateX(1200px) translateZ(-360px) rotateY(-45deg);
+}
+
+/* Second */
+#t-2:checked~.dots label[for="t-1"] {
+  transform: scale(1.5);
+}
+
+#t-2:checked~.dots label[for="t-2"] {
+  transform: scale(2);
+  background-color: #fff;
+}
+
+#t-2:checked~.dots label[for="t-3"] {
+  transform: scale(1.5);
+}
+
+#t-2:checked~.shopcito label[for="t-1"] {
+  transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+}
+
+#t-2:checked~.shopcito label[for="t-2"] {
+  z-index: 3;
+}
+
+#t-2:checked~.shopcito label[for="t-3"] {
+  transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+  z-index: 2;
+}
+
+#t-2:checked~.shopcito label[for="t-4"] {
+  transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+  z-index: 1;
+}
+
+#t-2:checked~.shopcito label[for="t-5"] {
+  transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+}
+
+/* Third */
+#t-3:checked~.dots label[for="t-2"] {
+  transform: scale(1.5);
+}
+
+#t-3:checked~.dots label[for="t-3"] {
+  transform: scale(2);
+  background-color: #fff;
+}
+
+#t-3:checked~.dots label[for="t-4"] {
+  transform: scale(1.5);
+}
+
+#t-3:checked~.shopcito label[for="t-1"] {
+  transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+}
+
+#t-3:checked~.shopcito label[for="t-2"] {
+  transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+}
+
+#t-3:checked~.shopcito label[for="t-3"] {
+  z-index: 3;
+}
+
+#t-3:checked~.shopcito label[for="t-4"] {
+  transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+  z-index: 2;
+}
+
+#t-3:checked~.shopcito label[for="t-5"] {
+  transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+}
+
+/* Fourth */
+#t-4:checked~.dots label[for="t-3"] {
+  transform: scale(1.5);
+}
+
+#t-4:checked~.dots label[for="t-4"] {
+  transform: scale(2);
+  background-color: #fff;
+}
+
+#t-4:checked~.dots label[for="t-5"] {
+  transform: scale(1.5);
+}
+
+#t-4:checked~.shopcito label[for="t-1"] {
+  transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+}
+
+#t-4:checked~.shopcito label[for="t-2"] {
+  transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+}
+
+#t-4:checked~.shopcito label[for="t-3"] {
+  transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+  z-index: 2;
+}
+
+#t-4:checked~.shopcito label[for="t-4"] {
+  z-index: 3;
+}
+
+#t-4:checked~.shopcito label[for="t-5"] {
+  transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+}
+
+/* Fifth */
+#t-5:checked~.dots label[for="t-4"] {
+  transform: scale(1.5);
+}
+
+#t-5:checked~.dots label[for="t-5"] {
+  transform: scale(2);
+  background-color: #fff;
+}
+
+#t-5:checked~.shopcito label[for="t-1"] {
+  transform: translateX(-1200px) translateZ(-360px) rotateY(45deg);
+}
+
+#t-5:checked~.shopcito label[for="t-2"] {
+  transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+  z-index: 1;
+}
+
+#t-5:checked~.shopcito label[for="t-3"] {
+  transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+  z-index: 2;
+}
+
+#t-5:checked~.shopcito label[for="t-4"] {
+  transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+  z-index: 3;
+}
+
+#t-5:checked~.shopcito label[for="t-5"] {
+  z-index: 4;
+}
+</style>
 </body>
 <%- include('../partials/footer'); -%>     
 </html>  
