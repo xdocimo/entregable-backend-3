@@ -3,48 +3,25 @@ const app = express()
 const path = require('path')
 const bodyparser = require("body-parser")
 app.use(bodyparser.urlencoded({ extended: true }))
+const { homeView, cartView, loginView, registerView, dproductView } = require("./controllers/views");
+const { getAll, getOne, create, update, deleteOne } = require('./controllers/products');
 
 const session = require('express-session')
 const PORT = 3000
 app.listen(PORT, () => console.log("Escuchando en el puerto" + PORT))
 
-/*
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
-},
-app.get('/detalle-producto', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/detail-product.html'))
-},
 
-/* app.get('/inicio-sesion', (req, res) => {
-    res.render("login.ejs")
-}, */
-
-app.use('/', require('./users'))
+app.use('/', require('./users')) // PARA LOGIN Y REGISTER!!
 app.set('view engine', 'ejs')
+app.get('/', homeView)
+app.get('/cart', cartView)
+app.get('/login', loginView)
+app.get('/register', registerView)
+app.get('/detailproduct', dproductView)
+app.get('/products', getAll)
+app.get('/products/:id', getOne)
+app.post('/products/', create)
+app.put('/products/:id', update)
+app.delete('/products/:id', deleteOne)
 
-
-
-/* 
-app.get('/registrarme', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/register.html'))
-},
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/cart.html'))
-},
-app.get("/get-cookie", (req,res) => {
-    const cookie = req.cookies
-    res.json = 
-    res.send(cookie)
-},
-app.get("/set-cookie", (req,res) => {
-    const cookie = req.query.cookie
-    res.cookie("cookie", cookie)
-    console.log(cookie)
-    res.send(cookie)
-},
-)
-)
-)
-)
-*/
+module.exports = app;
